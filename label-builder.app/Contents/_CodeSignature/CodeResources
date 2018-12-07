@@ -30,7 +30,7 @@
 		</data>
 		<key>Resources/applet.rsrc</key>
 		<data>
-		C+jPmhzdZq7F0M+Vu0oP7CBmpQQ=
+		INcKdxoWyiDMbuBN/ebKoUYJcgE=
 		</data>
 		<key>Resources/barcode.gif</key>
 		<data>
@@ -113,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C+jPmhzdZq7F0M+Vu0oP7CBmpQQ=
+			INcKdxoWyiDMbuBN/ebKoUYJcgE=
 			</data>
 			<key>hash2</key>
 			<data>
-			yErT9mNO1WxVfBrTAzGCjFMerqrP5MBN1Z9iedAQ2Cw=
+			klXYu0+oa4YUObd8g/WZ4NZRrQxgSpwlaMsHNYf0z0M=
 			</data>
 		</dict>
 		<key>Resources/barcode.gif</key>
@@ -146,7 +146,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			7SbD/i53AbBGXQmA4ey/rCIz2O0=
+			Iql2vxKhA96G+hfFuGKOfx04Y0o=
 			</data>
 			<key>requirement</key>
 			<string>identifier "me.elimadsen.label-builder" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: elitmadsen@gmail.com (VRBLFDJW42)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
