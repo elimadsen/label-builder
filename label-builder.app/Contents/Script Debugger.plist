@@ -7,7 +7,7 @@
 	<key>SD5ConversionOffered</key>
 	<false/>
 	<key>SDAddUsedLibrariesOnExport</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>SDAutoIncBuildNumber</key>
 	<false/>
 	<key>SDBreakOnExceptions</key>
@@ -18,8 +18,6 @@
 	<string>2.0</string>
 	<key>SDCocoaTermsInProperties</key>
 	<true/>
-	<key>SDCodesignIdentity</key>
-	<string>Mac Developer: elitmadsen@gmail.com (VRBLFDJW42)</string>
 	<key>SDCodesignOnlyOnExport</key>
 	<false/>
 	<key>SDFolds</key>
@@ -69,9 +67,9 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<dict>
 							<key>3</key>
 							<array>
-								<integer>477</integer>
-								<integer>608</integer>
-								<integer>239</integer>
+								<integer>376</integer>
+								<integer>479</integer>
+								<integer>188</integer>
 							</array>
 							<key>5</key>
 							<array>
@@ -90,7 +88,10 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 							<string>mode.best</string>
 						</array>
 						<key>positions2</key>
-						<dict/>
+						<dict>
+							<key>positions</key>
+							<dict/>
+						</dict>
 						<key>prettyPrint</key>
 						<false/>
 					</dict>
@@ -116,34 +117,12 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 				</dict>
 				<key>eventLogHeight</key>
 				<real>118</real>
-				<key>eventLogViewState</key>
-				<dict>
-					<key>format</key>
-					<string>EventLogScopeBar_Source</string>
-					<key>resultState</key>
-					<dict>
-						<key>modes</key>
-						<array>
-							<string>mode.best</string>
-						</array>
-						<key>positions2</key>
-						<dict/>
-						<key>prettyPrint</key>
-						<false/>
-					</dict>
-					<key>resultViewerWidth</key>
-					<real>410</real>
-					<key>scopeVisible</key>
-					<true/>
-					<key>showResultViewer</key>
-					<false/>
-				</dict>
 				<key>inspectorsViewState</key>
 				<dict>
 					<key>applications</key>
 					<dict>
 						<key>dividerPos2</key>
-						<real>148</real>
+						<real>144</real>
 						<key>searchFlags</key>
 						<integer>167784446</integer>
 					</dict>
@@ -155,9 +134,9 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<dict>
 							<key>3</key>
 							<array>
-								<integer>478</integer>
-								<integer>437</integer>
-								<integer>432</integer>
+								<integer>378</integer>
+								<integer>174</integer>
+								<integer>514</integer>
 							</array>
 						</dict>
 					</dict>
@@ -166,7 +145,7 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<key>explorer</key>
 						<dict>
 							<key>dividerPos</key>
-							<real>291</real>
+							<real>189</real>
 							<key>scope2.changedItems</key>
 							<true/>
 							<key>scope2.emptyElements</key>
@@ -183,7 +162,7 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 					</dict>
 				</dict>
 				<key>mainSplitPosition</key>
-				<real>434</real>
+				<real>296</real>
 				<key>modeIdentifier</key>
 				<string>tab.rsrcs</string>
 				<key>resourcesViewState</key>
@@ -194,8 +173,8 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<dict>
 							<key>2</key>
 							<array>
-								<integer>396</integer>
-								<integer>959</integer>
+								<integer>313</integer>
+								<integer>761</integer>
 							</array>
 						</dict>
 					</dict>
@@ -204,9 +183,7 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<key>expanded</key>
 						<array/>
 						<key>selection</key>
-						<array>
-							<string>/Users/elimadsen/Git/label-builder/label-builder.app/Contents/Resources/barcode.gif</string>
-						</array>
+						<array/>
 					</dict>
 				</dict>
 				<key>scriptViewState</key>
@@ -219,7 +196,7 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 								<key>length</key>
 								<integer>0</integer>
 								<key>location</key>
-								<integer>1279</integer>
+								<integer>224</integer>
 							</dict>
 						</array>
 						<key>LNSTextViewShowInvisibles</key>
@@ -229,9 +206,9 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 						<key>LNSTextViewShowTabStops</key>
 						<false/>
 						<key>LNSTextViewWrapLines</key>
-						<false/>
+						<true/>
 						<key>LNSVisibleRect</key>
-						<string>{{0, 730}, {2080, 1322}}</string>
+						<string>{{0, 23}, {1124, 1017}}</string>
 						<key>ShowLineNumbers</key>
 						<false/>
 						<key>showCodeCoverage</key>
@@ -253,14 +230,14 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 					<key>tab.debug</key>
 					<real>439</real>
 					<key>tab.rsrcs</key>
-					<real>433</real>
+					<real>295</real>
 				</dict>
 				<key>tabsHidden</key>
 				<false/>
 				<key>windowControllerID</key>
 				<string>CBA3AF16-5FE6-4CC1-A395-56BE2C13FD37-6857-00066F12714E9433</string>
 				<key>windowFrame</key>
-				<string>-2560 53 2560 1364 -2560 0 2560 1440 </string>
+				<string>0 53 1466 1124 0 0 1920 1177 </string>
 			</dict>
 		</dict>
 		<key>windowControllers</key>
@@ -275,7 +252,7 @@ WVtga3SDh4+Yqq2yAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=</string>
 					<key>miniaturized</key>
 					<false/>
 					<key>windowFrame</key>
-					<string>-2560 53 2560 1364 -2560 0 2560 1440 </string>
+					<string>0 53 1466 1124 0 0 1920 1177 </string>
 				</dict>
 			</dict>
 		</array>

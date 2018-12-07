@@ -1,378 +1,1769 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
-{\fonttbl\f0\fnil\fcharset0 Verdana-Italic;\f1\fnil\fcharset0 Verdana;\f2\fnil\fcharset0 Verdana-Bold;
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fnil\fcharset0 Verdana;\f1\fnil\fcharset0 Verdana-Bold;\f2\fnil\fcharset0 Verdana-Italic;
 }
-{\colortbl;\red255\green255\blue255;\red74\green80\blue93;\red85\green83\blue115;\red159\green77\blue161;
-\red157\green109\blue69;\red118\green171\blue94;\red222\green180\blue104;\red214\green85\blue98;\red66\green146\blue158;
-\red146\green155\blue173;\red157\green109\blue69;\red66\green146\blue158;\red41\green98\blue158;\red41\green98\blue158;
-}
-{\*\expandedcolortbl;;\csgenericrgb\c28869\c31199\c36578;\csgenericrgb\c33234\c32737\c45107;\csgenericrgb\c62209\c30038\c63135;
-\csgenericrgb\c61531\c42761\c27097;\csgenericrgb\c46137\c67101\c36940;\csgenericrgb\c87063\c70562\c40634;\csgenericrgb\c83819\c33305\c38576;\csgenericrgb\c26040\c57092\c61791;
-\cssrgb\c63922\c67261\c73310;\csgenericrgb\c61432\c42867\c27182;\csgenericrgb\c25853\c57150\c61969;\csgenericrgb\c16075\c38431\c61986;\csgenericrgb\c16187\c38268\c61970;
-}
+{\colortbl;\red255\green255\blue255;\red94\green114\blue132;\red176\green181\blue203;\red215\green219\blue246;
+\red189\green149\blue252;\red252\green198\blue77;\red133\green213\blue129;\red64\green128\blue0;\red248\green112\blue102;
+\red190\green148\blue253;\red113\green97\blue180;\red251\green141\blue93;\red250\green141\blue94;\red113\green97\blue180;
+\red233\green215\blue129;}
+{\*\expandedcolortbl;;\csgenericrgb\c36754\c44753\c51732;\csgenericrgb\c69182\c70794\c79520;\csgenericrgb\c84392\c85862\c96407;
+\csgenericrgb\c74228\c58329\c98869;\csgenericrgb\c98673\c77702\c30324;\csgenericrgb\c52298\c83625\c50663;\csgenericrgb\c25000\c50001\c0;\cssrgb\c98489\c52735\c47487;
+\csgenericrgb\c74412\c58229\c99079;\csgenericrgb\c44450\c37942\c70414;\csgenericrgb\c98245\c55290\c36657;\csgenericrgb\c98091\c55472\c36768;\csgenericrgb\c44480\c38052\c70482;
+\csgenericrgb\c91314\c84277\c50535;}
 \deftab480
 \pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
 
-\f0\i\fs24 \cf2 --	Created by: Eli Madsen
-\f1\i0 \cf3 \
+\f0\fs24 \cf2 --	Created by: Eli Madsen\cf3 \
+\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
+\cf2 --	Created on: 12/6/18\cf3 \
+\
+\
+\
+\cf2 --	sets AppleScript version number and imports scripting additions\cf3 \
 
-\f0\i \cf2 --	Created on: 12/6/18
-\f1\i0 \cf3 \
-\
-\
-\
+\f1\b \cf4 use
+\f0\b0 \cf3  \cf5 AppleScript\cf3  \cf6 version\cf3  \cf7 "2.4"\cf3  \cf2 -- Yosemite (10.10) or later\cf3 \
 
-\f0\i \cf2 --	sets AppleScript version number and imports scripting additions
-\f1\i0 \cf3 \
-
-\f2\b \cf4 use
-\f1\b0 \cf3  \cf5 AppleScript\cf3  \cf4 version\cf3  \cf6 "2.4"\cf3  
-\f0\i \cf2 -- Yosemite (10.10) or later
-\f1\i0 \cf3 \
-
-\f2\b \cf4 use
-\f1\b0 \cf3  
-\f0\i \cf7 scripting additions
-\f1\i0 \cf3 \
+\f1\b \cf4 use
+\f0\b0 \cf3  
+\f2\i \cf6 scripting additions
+\f0\i0 \cf3 \
 \
 \
 \
+\cf2 --	Global Variables\cf3 \
 
-\f0\i \cf2 --	Global Variables
-\f1\i0 \cf3 \
-
-\f2\b \cf4 global
-\f1\b0 \cf3  \cf8 usrPswd\cf3 \
+\f1\b \cf4 global
+\f0\b0 \cf3  \cf8 usrPswd\cf3 \
 \
 \
 \
+\cf2 --	Run Handle\cf3 \
 
-\f0\i \cf2 --	Run Handle
-\f1\i0 \cf3 \
-
-\f2\b \cf4 on
-\f1\b0 \cf3  
-\f2\b \cf9 run
-\f1\b0 \cf3 \
+\f1\b \cf4 on
+\f0\b0 \cf3  
+\f1\b \cf6 run
+\f0\b0 \cf3 \
 	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 usrPswd\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 getUserPassword\cf3 ()\
+	\cf9 getUserPassword\cf3 ()\
+	\cf9 updatepL\cf3 ()\
 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 skuNumber\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf6 "SKU"\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 repeat
-\f1\b0 \cf3 \
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "SKU"\cf3 \
+	\
+	
+\f1\b \cf4 repeat
+\f0\b0 \cf3 \
 		
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 promptLabelChoice\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  
-\f2\b \cf4 not
-\f1\b0 \cf3  \{\cf6 "Small Quantity Adjust Label"\cf3 \} 
-\f2\b \cf4 then
-\f1\b0 \cf3  
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 skuNumber\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 downloadBarcodeImage\cf3 (\cf8 skuNumber\cf3 )\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  \{\cf6 "Large Label"\cf3 \} 
-\f2\b \cf4 then
-\f1\b0 \cf3 \
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 promptLabelChoice\cf3 ()\
+		\
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  \{\cf7 "Small Quantity Adjust Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
 			
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 labelInfo\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 getLargeLabelInfo\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			\
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 downloadBarcodeImage\cf3 (\cf8 skuNumber\cf3 )\
+			\
 		
-\f2\b \cf4 else
-\f1\b0 \cf3  
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  \{\cf6 "Small Label"\cf3 \} 
-\f2\b \cf4 then
-\f1\b0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 labelInfo\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 getSmallLabelInfo\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			\
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+		\
 		
-\f2\b \cf4 else
-\f1\b0 \cf3  
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  \{\cf6 "Small Quantity Adjust Label"\cf3 \} 
-\f2\b \cf4 then
-\f1\b0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 labelInfo\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf10 getSmallQtyLabelInfo\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			\
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 getLabelData\cf3 (\cf8 response\cf3 , \cf8 skuNumber\cf3 )\
 		
-\f2\b \cf4 else
-\f1\b0 \cf3  
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf8 response\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  \cf11 false\cf3  
-\f2\b \cf4 then
-\f1\b0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			\cf10 cleanup\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 			\
-		
-\f2\b \cf4 end
-\f1\b0 \cf3  
-\f2\b \cf4 if
-\f1\b0 \cf3 \
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  
+\f2\i \cf10 false
+\f0\i0 \cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 buildLabel\cf3 (\cf8 response\cf3 , \cf8 labelData\cf3 )\
 		\
 	
-\f2\b \cf4 end
-\f1\b0 \cf3  
-\f2\b \cf4 repeat
-\f1\b0 \cf3 \
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 repeat
+\f0\b0 \cf3 \
 	\
 
-\f2\b \cf4 end
-\f1\b0 \cf3  
-\f2\b \cf9 run
-\f1\b0 \cf3 \
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf6 run
+\f0\b0 \cf3 \
 \
 \
 \
 
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 cleanup\cf3 ()\
-	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf9 quit
-\f1\b0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 cleanup\cf3 \
-\
-\
-\
-
-\f0\i \cf2 --	Handles
-\f1\i0 \cf3 \
-
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 getUserPassword\cf3 ()\
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 cleanup\cf3 ()\
 	\
 	
-\f0\i \cf2 --	 stores users password for later use in shell scripts
-\f1\i0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 return
-\f1\b0 \cf3  \cf12 text returned\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  (
-\f2\b \cf13 display dialog
-\f1\b0 \cf3  \cf5 name\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  \cf11 current application\cf3  & \cf6 " wants to make changes."\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf6 "Enter your password to allow this."\cf3  \cf14 with icon\cf3  \cf12 caution\cf3  \cf14 default button\cf3  \cf7 2\cf3  \cf14 default answer\cf3  \cf6 ""\cf3  
-\f2\b \cf4 with
-\f1\b0 \cf3  \cf14 hidden answer\cf3 )\
+\f1\b \cf6 quit
+\f0\b0 \cf3  
+\f1\b \cf4 me
+\f0\b0 \cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 cleanup\cf3 \
+\
+\
+\
+\cf2 --	Handles\cf3 \
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 getUserPassword\cf3 ()\
+	\
+	\cf2 --	 stores users password for later use in shell scripts\cf3 \
 	
-\f2\b \cf13 do shell script
-\f1\b0 \cf3  \cf6 "sudo ls"\cf3  \cf12 password\cf3  \cf8 usrPswd\cf3  
-\f2\b \cf4 with
-\f1\b0 \cf3  \cf14 administrator privileges\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf11 text returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf5 name\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf10 current application
+\f0\i0 \cf3  & \cf7 " wants to make changes."\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf7 "Enter your password to allow this."\cf3  \cf13 with icon\cf3  
+\f2\i \cf14 caution
+\f0\i0 \cf3  \cf13 default button\cf3  \cf15 2\cf3  \cf13 default answer\cf3  \cf7 ""\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 hidden answer\cf3 )\
+	
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "sudo cd /var/root"\cf3  \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3 \
+	\
 
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 getUserPassword\cf3 \
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 getUserPassword\cf3 \
 \
 \
 \
 
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 promptLabelChoice\cf3 ()\
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 promptLabelChoice\cf3 ()\
+	\
+	\cf2 --	prompts user to choose a label type and returns choice\cf3 \
+	
+\f1\b \cf6 activate
+\f0\b0 \cf3  
+\f2\i \cf10 current application
+\f0\i0 \cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 theList\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 , \cf7 "Small SKU Label"\cf3 , \cf7 "Small Quantity Adjust Label"\cf3 \}\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (
+\f1\b \cf12 choose from list
+\f0\b0 \cf3  \cf8 theList\cf3  \cf13 default items\cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 theList\cf3  \cf13 with prompt\cf3  \cf7 "Select label type"\cf3 )\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f2\i \cf10 false
+\f0\i0 \cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3  \cf9 cleanup\cf3 ()\
 	\
 	
-\f0\i \cf2 --	prompts user to choose a label type and returns choice
-\f1\i0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 theList\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \{\cf6 "Large SKU Label"\cf3 , \cf6 "Small SKU Label"\cf3 , \cf6 "Small Quantity Adjust Label"\cf3 \}\
+\f1\b \cf4 return
+\f0\b0 \cf3  \cf8 response\cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 promptLabelChoice\cf3 \
+\
+\
+\
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 downloadBarcodeImage\cf3 (\cf8 skuNumber\cf3 )\
+	\
 	
-\f2\b \cf4 return
-\f1\b0 \cf3  
-\f2\b \cf13 choose from list
-\f1\b0 \cf3  \cf8 theList\cf3  \cf14 default items\cf3  
-\f0\i \cf7 item
-\f1\i0 \cf3  \cf7 1\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  \cf8 theList\cf3  \cf14 with prompt\cf3  \cf6 "Select label type"\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 promptLabelChoice\cf3 \
-\
-\
-\
-
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 downloadBarcodeImage\cf3 (\cf8 skuNumber\cf3 )\
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumberResponse\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Enter SKU"\cf3  \cf13 default answer\cf3  \cf8 skuNumber\cf3  \cf13 buttons\cf3  \{\cf7 "Quit"\cf3 , \cf7 "Continue"\cf3 \} \cf13 default button\cf3  \cf15 2\cf3 )\
 	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 skuNumberResponse\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  (
-\f2\b \cf13 display dialog
-\f1\b0 \cf3  \cf6 "Enter SKU"\cf3  \cf14 default answer\cf3  \cf8 skuNumber\cf3  \cf14 buttons\cf3  \{\cf6 "Quit"\cf3 , \cf6 "Continue"\cf3 \} \cf14 default button\cf3  \cf7 2\cf3 )\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 if
-\f1\b0 \cf3  \cf12 button returned\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  \cf8 skuNumberResponse\cf3  
-\f2\b \cf4 is
-\f1\b0 \cf3  \cf6 "Quit"\cf3  
-\f2\b \cf4 then
-\f1\b0 \cf3 \
-		\cf10 cleanup\cf3 ()\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		\
 	
-\f2\b \cf4 else
-\f1\b0 \cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 skuNumber\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf12 text returned\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  \cf8 skuNumberResponse\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 		\
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf11 button returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 skuNumberResponse\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf7 "Quit"\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		\cf9 cleanup\cf3 ()\
+		\
 	
-\f2\b \cf4 end
-\f1\b0 \cf3  
-\f2\b \cf4 if
-\f1\b0 \cf3 \
-	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 downloadUrl\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf6 "https://barcode.tec-it.com/barcode.ashx?data="\cf3  & \cf8 skuNumber\cf3  & \cf6 "&code=Code128&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=300&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0%27\\\\%20alt=%27Barcode%27%20%3E%20"\cf3 \
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf11 text returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 skuNumberResponse\cf3 \
+		\
 	
-\f2\b \cf4 set
-\f1\b0 \cf3  \cf8 imageFile\cf3  
-\f2\b \cf4 to
-\f1\b0 \cf3  \cf5 POSIX path\cf3  
-\f2\b \cf4 of
-\f1\b0 \cf3  (
-\f2\b \cf13 path to resource
-\f1\b0 \cf3  \cf6 "barcode.gif"\cf3 )\
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+	\
 	
-\f2\b \cf13 do shell script
-\f1\b0 \cf3  \cf6 "curl '"\cf3  & \cf8 downloadUrl\cf3  & \cf6 "' > "\cf3  & \cf8 imageFile\cf3  \cf12 password\cf3  \cf8 usrPswd\cf3  
-\f2\b \cf4 with
-\f1\b0 \cf3  \cf14 administrator privileges\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	
-\f2\b \cf4 return
-\f1\b0 \cf3  \cf8 skuNumber\cf3 \
-\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
-\cf3 	\
-
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 downloadBarcodeImage\cf3 \
-\
-\
-\
-
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 getLargeLabelInfo\cf3 ()\
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 downloadUrl\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "https://barcode.tec-it.com/barcode.ashx?data="\cf3  & \cf8 skuNumber\cf3  & \cf7 "&code=Code128&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=300&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0%27\\\\%20alt=%27Barcode%27%20%3E%20"\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 imageFile\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to resource
+\f0\b0 \cf3  \cf7 "barcode.gif"\cf3 )\
+	
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "curl '"\cf3  & \cf8 downloadUrl\cf3  & \cf7 "' > "\cf3  & \cf8 imageFile\cf3  \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3 \
 	\
-	\
-	\
-
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 getLargeLabelInfo\cf3 \
-\
-\
-\
-
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 getSmallLabelInfo\cf3 ()\
-	\
-	\
+	
+\f1\b \cf4 return
+\f0\b0 \cf3  \cf8 skuNumber\cf3 \
 	\
 
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 getSmallLabelInfo\cf3 \
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 downloadBarcodeImage\cf3 \
 \
 \
 \
 
-\f2\b \cf4 on
-\f1\b0 \cf3  \cf10 getSmallQtyLabelInfo\cf3 ()\
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 updatepL\cf3 ()\
 	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 homeDirectory\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to
+\f0\b0 \cf3  
+\f2\i \cf14 home folder
+\f0\i0 \cf3 )\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 pLFolder\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (\cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to
+\f0\b0 \cf3  
+\f2\i \cf14 home folder
+\f0\i0 \cf3 )) & \cf7 ".productList/"\cf3 \
 	\
+	
+\f1\b \cf4 tell
+\f0\b0 \cf3  
+\f2\i \cf6 application
+\f0\i0 \cf3  \cf7 "System Events"\cf3 \
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  (
+\f1\b \cf6 exists
+\f0\b0 \cf3  
+\f2\i \cf6 folder
+\f0\i0 \cf3  \cf8 pLFolder\cf3 ) 
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "mkdir "\cf3  & \cf8 pLFolder\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3  \cf2 -- creates .productList folder if it doesn't exist\cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 tell
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 shellCommand\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "cd "\cf3  & \cf8 pLFolder\cf3  & \cf7 ";curl -L 'https://docs.google.com/spreadsheets/d/1m1T821R-CRehB3u4-YujM8vzFs7YyETgRL4tWRAWWKI/export?gid=0&format=tsv' > PL"\cf3  \cf2 -- download command to get tsv file from google sheet url\cf3 \
+	\
+	
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+		
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf8 shellCommand\cf3  \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3  \cf2 -- runs download command\cf3 \
+		\
+	
+\f1\b \cf4 on
+\f0\b0 \cf3  
+\f1\b \cf4 error
+\f0\b0 \cf3  \cf8 e\cf3 \
+		
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Error downloading product list"\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf8 e\cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 validationTest\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 missing value
+\f0\i0 \cf3 \
+		
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "grep -w \\"#REF\\" "\cf3  & \cf8 pLFolder\cf3  & \cf7 "PL"\cf3  \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3  \cf2 -- tests downloaded product list by searching for any #REF! errors\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 validationTest\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "Error"\cf3  \cf2 -- if the last command found #REF! errors then this variable gets set to "Error" otherwise it skips over this\cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 validationTest\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  
+\f2\i \cf6 missing value
+\f0\i0 \cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  
+\f2\i \cf6 application
+\f0\i0 \cf3  \cf7 "System Events"\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 pLVerifiedModificationDate\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 modification date\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 file
+\f0\i0 \cf3  ((\cf8 pLFolder\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf7 "PL_Verified"\cf3 ) \cf2 -- checks for and gets modification date of old product list file if it exists\cf3 \
+			
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Error with downloaded product list. Found #REF! errors."\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf7 "Using product list from "\cf3  & \cf8 pLVerifiedModificationDate\cf3 \
+			\
+		
+\f1\b \cf4 on
+\f0\b0 \cf3  
+\f1\b \cf4 error
+\f0\b0 \cf3  \cf8 e\cf3 \
+			
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Error reading modification date of product list"\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf8 e\cf3  \cf13 buttons\cf3  \cf7 "Cancel"\cf3  \cf13 default button\cf3  \cf15 1\cf3  \cf13 cancel button\cf3  \cf15 1\cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+		\
+	
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+			
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "mv "\cf3  & \cf8 pLFolder\cf3  & \cf7 "PL "\cf3  & \cf8 pLFolder\cf3  & \cf7 "PL_Verified"\cf3  \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3  \cf2 -- if no errors are found then the file is renamed and replaces any previously verified product list\cf3 \
+			\
+		
+\f1\b \cf4 on
+\f0\b0 \cf3  
+\f1\b \cf4 error
+\f0\b0 \cf3  \cf8 e\cf3 \
+			
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Error updating product list"\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf8 e\cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
 	\
 
-\f2\b \cf4 end
-\f1\b0 \cf3  \cf10 getSmallQtyLabelInfo\cf3 \
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 updatepL\cf3 \
 \
 \
 \
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 promptQuantity\cf3 ()\
+	\
+	
+\f1\b \cf4 return
+\f0\b0 \cf3  \cf11 text returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "Enter quantity."\cf3  \cf13 default answer\cf3  \cf15 1\cf3  \cf13 buttons\cf3  \{\cf7 "Continue"\cf3 \} \cf13 default button\cf3  \cf15 1\cf3 )\
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 promptQuantity\cf3 \
+\
+\
+\
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 getLabelData\cf3 (\cf8 response\cf3 , \cf8 skuNumber\cf3 )\
+	\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  \{\cf7 "Small SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantity\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 promptQuantity\cf3 ()\
+		\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDateData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (
+\f1\b \cf12 current date
+\f0\b0 \cf3 )\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDate\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  ((
+\f2\i \cf6 month
+\f0\i0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentDateData\cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 space\cf3  & ((\cf5 day\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentDateData\cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf7 ", "\cf3  & ((\cf5 year\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentDateData\cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  \{\cf7 "Small Quantity Adjust Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 homeDirectory\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to
+\f0\b0 \cf3  
+\f2\i \cf14 home folder
+\f0\i0 \cf3 )\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 pLFolder\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (\cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to
+\f0\b0 \cf3  
+\f2\i \cf14 home folder
+\f0\i0 \cf3 )) & \cf7 ".productList/"\cf3 \
+		\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 continueTest\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf10 true
+\f0\i0 \cf3 \
+		
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 productMatches\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 paragraphs
+\f0\i0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 do shell script
+\f0\b0 \cf3  \cf7 "grep -rni \\""\cf3  & \cf8 skuNumber\cf3  & \cf7 "\\" "\cf3  & (\cf8 pLFolder\cf3  & \cf7 "PL_Verified"\cf3 ) \cf11 password\cf3  \cf8 usrPswd\cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf13 administrator privileges\cf3 )\
+			\
+		
+\f1\b \cf4 on
+\f0\b0 \cf3  
+\f1\b \cf4 error
+\f0\b0 \cf3  \cf8 e\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (
+\f1\b \cf12 display dialog
+\f0\b0 \cf3  \cf7 "There was an error searching the product list for "\cf3  & \cf8 skuNumber\cf3  & \cf7 "."\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf7 "Details:"\cf3  & \cf5 return\cf3  & \cf8 e\cf3  & \cf5 return\cf3  & \cf5 return\cf3  & \cf7 "Enter a description below."\cf3  \cf13 default answer\cf3  \cf7 ""\cf3  \cf13 buttons\cf3  \{\cf7 "Quit"\cf3 , \cf7 "Go Back"\cf3 , \cf7 "Continue"\cf3 \} \cf13 default button\cf3  \cf7 "Continue"\cf3 )\
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 responseButton\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf11 button returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 response\cf3 \
+			
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 responseButton\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf7 "Quit"\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+				\cf9 cleanup\cf3 ()\
+				\
+			
+\f1\b \cf4 else
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 responseButton\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf7 "Go Back"\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+				
+\f1\b \cf4 return
+\f0\b0 \cf3  
+\f2\i \cf10 false
+\f0\i0 \cf3 \
+				\
+			
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf11 text returned\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 response\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 continueTest\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf10 false
+\f0\i0 \cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 try
+\f0\b0 \cf3 \
+		\
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 continueTest\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f2\i \cf10 true
+\f0\i0 \cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 oldDelims\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "	"\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 possibleMatchesList\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\}\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 exactMatchesList\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\}\
+			
+\f1\b \cf4 repeat
+\f0\b0 \cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf8 currentMatch\cf3  
+\f1\b \cf4 in
+\f0\b0 \cf3  \cf8 productMatches\cf3 \
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentMatchItems\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 text items
+\f0\i0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+				\
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentSku\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatchItems\cf3 \
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatchItems\cf3 \
+				\
+				
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 modelNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 7\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatchItems\cf3 \
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuGrade\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 33\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatchItems\cf3 \
+					\
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelDataTemp\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf8 currentSku\cf3 , \cf8 modelNumber\cf3 , \cf8 skuGrade\cf3 , \cf8 skuDescription\cf3 , \cf8 currentDate\cf3 , \cf8 quantity\cf3 \}\
+					\
+				
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelDataTemp\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf8 currentSku\cf3 , \cf8 skuDescription\cf3 \}\
+					\
+				
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+				\
+				
+\f1\b \cf4 copy
+\f0\b0 \cf3  \cf8 labelDataTemp\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 possibleMatchesList\cf3 \
+				
+\f1\b \cf4 if
+\f0\b0 \cf3  (\cf8 currentSku\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) 
+\f1\b \cf4 is
+\f0\b0 \cf3  (\cf8 skuNumber\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) 
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf4 copy
+\f0\b0 \cf3  \cf8 labelDataTemp\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 exactMatchesList\cf3 \
+				\
+			
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 repeat
+\f0\b0 \cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 oldDelims\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 exactMatchesListLength\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (\cf5 length\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 exactMatchesList\cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 number
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 exactMatchesListLength\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf15 0\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 possibleMatchesListLength\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (\cf5 length\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 possibleMatchesList\cf3 ) 
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 number
+\f0\i0 \cf3 \
+				\
+				
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 possibleMatchesListLength\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf15 0\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 zeroMatch\cf3 ()\
+					\
+				
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+					
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 multipleMatch\cf3 (\cf8 possibleMatchesList\cf3 )\
+					\
+				
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+				\
+			
+\f1\b \cf4 else
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 exactMatchesListLength\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 exactMatchesList\cf3 \
+				\
+			
+\f1\b \cf4 else
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 exactMatchesListLength\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 greater than
+\f0\b0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+				
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf9 multipleMatch\cf3 (\cf8 exactMatchesList\cf3 )\
+				\
+			
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+			\
+		
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf8 skuNumber\cf3 , \cf8 skuNumber\cf3 , (
+\f2\i \cf6 character
+\f0\i0 \cf3  \cf15 -1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 skuNumber\cf3 ), \cf8 skuDescription\cf3 , \cf8 currentDate\cf3 , \cf8 quantity\cf3 \}\
+			
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Small SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf8 skuNumber\cf3 , \cf8 skuDescription\cf3 \}\
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+		\
+	
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelData\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf8 skuNumber\cf3 , \cf8 currentDate\cf3 , \cf8 quantity\cf3 \}\
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 return
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 getLabelData\cf3 \
+\
+\
+\
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 zeroMatch\cf3 ()\
+	\
+	\cf2 -- TODO zero matches\cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 zeroMatch\cf3 \
+\
+\
+\
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 multipleMatch\cf3 (\cf8 response\cf3 , \cf8 exactMatchesList\cf3 )\
+	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 a\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf15 1\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 displayMatches\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\}\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 dataMatches\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\}\
+	\
+	
+\f1\b \cf4 repeat
+\f0\b0 \cf3  
+\f1\b \cf4 with
+\f0\b0 \cf3  \cf8 currentMatch\cf3  
+\f1\b \cf4 in
+\f0\b0 \cf3  \cf8 exactMatchesList\cf3 \
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentSku\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 modelNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuGrade\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 3\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 4\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDate\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 5\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantity\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 6\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			\
+			
+\f1\b \cf4 copy
+\f0\b0 \cf3  (\cf8 currentSku\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 tab\cf3  & (\cf8 modelNumber\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 tab\cf3  & (\cf8 skuDescription\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 return\cf3  & \cf8 a\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 displayMatches\cf3 \
+			
+\f1\b \cf4 copy
+\f0\b0 \cf3  \{\cf8 currentSku\cf3 , \cf8 modelNumber\cf3 , \cf8 skuGrade\cf3 , \cf8 skuDescription\cf3 , \cf8 currentDate\cf3 , \cf8 quantity\cf3 \} 
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 dataMatches\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 a\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 a\cf3  + \cf15 1\cf3 \
+			\
+		
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentSku\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 currentMatch\cf3 \
+			\
+			
+\f1\b \cf4 copy
+\f0\b0 \cf3  (\cf8 currentSku\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 tab\cf3  & (\cf8 skuDescription\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 text
+\f0\i0 \cf3 ) & \cf5 return\cf3  & \cf8 a\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 displayMatches\cf3 \
+			
+\f1\b \cf4 copy
+\f0\b0 \cf3  \{\cf8 currentSku\cf3 , \cf8 skuDescription\cf3 \} 
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 dataMatches\cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 repeat
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  (
+\f1\b \cf12 choose from list
+\f0\b0 \cf3  \cf8 displayMatches\cf3  \cf13 with prompt\cf3  \cf7 "Multiple matches found, please select one below."\cf3 )\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f2\i \cf10 false
+\f0\i0 \cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3  \cf9 cleanup\cf3 ()\
+	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 oldDelims\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 return\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 choiceNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 text item
+\f0\i0 \cf3  \cf15 -1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 response\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 AppleScript's\cf3  \cf5 text item delimiters\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 oldDelims\cf3 \
+	\
+	
+\f1\b \cf4 return
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  (\cf8 choiceNumber\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 number
+\f0\i0 \cf3 ) 
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 dataMatches\cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 multipleMatch\cf3 \
+\
+\
+\
+
+\f1\b \cf4 on
+\f0\b0 \cf3  \cf9 buildLabel\cf3 (\cf8 response\cf3 , \cf8 labelData\cf3 )\
+	\
+	\cf2 -- TODO text wrap\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantityText\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "Quantity"\cf3 \
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+	\
+	
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 modelNumber\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuGrade\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 3\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 4\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDate\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 5\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantity\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 6\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		\
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  (\cf8 quantity\cf3  
+\f1\b \cf4 as
+\f0\b0 \cf3  
+\f2\i \cf6 number
+\f0\i0 \cf3 ) 
+\f1\b \cf4 is
+\f0\b0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 then
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \{\cf8 currentDate\cf3 , \cf8 quantityText\cf3 , \cf8 quantity\cf3 \} 
+\f1\b \cf4 to
+\f0\b0 \cf3  \{\cf7 ""\cf3 , \cf7 ""\cf3 , \cf7 ""\cf3 \}\
+		\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelFileName\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "LargeSku.label"\cf3 \
+		\
+	
+\f1\b \cf4 else
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Small SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescription\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelFileName\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "SmallSku.label"\cf3 \
+		\
+	
+\f1\b \cf4 else
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Small Quantity Adjust Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDate\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantity\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 3\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  \cf8 labelData\cf3 \
+		\
+		
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelFileName\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf7 "SmallQty.label"\cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 labelFile\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to resource
+\f0\b0 \cf3  \cf8 labelFileName\cf3 )\
+	
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 imageFile\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf5 POSIX path\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  (
+\f1\b \cf12 path to resource
+\f0\b0 \cf3  \cf7 "barcode.gif"\cf3 )\
+	\
+	
+\f1\b \cf4 tell
+\f0\b0 \cf3  
+\f2\i \cf6 application
+\f0\i0 \cf3  \cf7 "DYMO Label"\cf3 \
+		
+\f1\b \cf6 openLabel
+\f0\b0 \cf3  \cf6 in\cf3  \cf8 labelFile\cf3 \
+		\
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  
+\f1\b \cf4 not
+\f0\b0 \cf3  \{\cf7 "Small Quantity Adjust Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 imageFileItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 imageFileItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 imageFileName\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 imageFile\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuDescriptionItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 skuDescriptionItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 skuDescription\cf3 \
+			\
+		
+\f1\b \cf4 else
+\f0\b0 \cf3 \
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDateItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 1\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 currentDateItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 currentDate\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantityTextItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 2\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 quantityTextItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 quantityText\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantityItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 3\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 quantityItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 quantity\cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+		\
+		
+\f1\b \cf4 if
+\f0\b0 \cf3  \cf8 response\cf3  
+\f1\b \cf4 is
+\f0\b0 \cf3  \{\cf7 "Large SKU Label"\cf3 \} 
+\f1\b \cf4 then
+\f0\b0 \cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 modelNumberItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 3\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 modelNumberItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 modelNumber\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 skuGradeItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 4\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 skuGradeItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 skuGrade\cf3  & \cf7 "-Grade"\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 currentDateItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 5\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 currentDateItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 currentDate\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantityTextItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 6\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 quantityTextItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 quantityText\cf3 \
+			\
+			
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf8 quantityItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 a reference
+\f0\b0 \cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f2\i \cf6 item
+\f0\i0 \cf3  \cf15 7\cf3  
+\f1\b \cf4 of
+\f0\b0 \cf3  
+\f2\i \cf6 print objects
+\f0\i0 \cf3 \
+			
+\f1\b \cf4 tell
+\f0\b0 \cf3  \cf8 quantityItem\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  
+\f1\b \cf4 set
+\f0\b0 \cf3  \cf5 content\cf3  
+\f1\b \cf4 to
+\f0\b0 \cf3  \cf8 quantity\cf3 \
+			\
+		
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 if
+\f0\b0 \cf3 \
+		\
+		
+\f1\b \cf6 redrawLabel
+\f0\b0 \cf3 \
+		
+\f1\b \cf6 activate
+\f0\b0 \cf3 \
+		\
+	
+\f1\b \cf4 end
+\f0\b0 \cf3  
+\f1\b \cf4 tell
+\f0\b0 \cf3 \
+	\
+	
+\f1\b \cf4 return
+\f0\b0 \cf3  \cf8 skuNumber\cf3 \
+	\
+
+\f1\b \cf4 end
+\f0\b0 \cf3  \cf9 buildLabel\cf3 \
 \
 \
 \
